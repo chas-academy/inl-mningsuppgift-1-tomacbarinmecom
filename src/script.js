@@ -21,28 +21,27 @@ const contactBook = {
       name: "Juan López",
       phone: "070-5556667",
       group: "familj",
-    },
-  ],
+    }
+  ]
 };
   
   // Ange en grupp
-  let groupToShow;
-  
-
-
+  let groupToShow = "arbete";
 
 function showContacts(contactBook, groupToShow) { // Rör ej denna kod
 
-
-
-    // Loopar igenom alla kontakter och jämför grupp
-   
-    return  // här ska sträng med namn och tekefonnummer visas i form av string interpolation
-
-
+  //Variabel som samlar resultatet 
+  let result = "";
+  for (let contact of contactBook.contacts) {
+    if (contact.group === groupToShow) {
+      result = `Namn: ${contact.name}, Telefon: ${contact.phone}`;
+      break; 
+    }
+  }
+  return result; // här ska sträng med namn och tekefonnummer visas i form av string interpolation
 }
-
 
 // Rör ej denna kod
 showContacts(contactBook, groupToShow);
-module.exports = { showContacts };
+module.exports = { showContacts }; 
+
